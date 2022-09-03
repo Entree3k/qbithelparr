@@ -1,4 +1,4 @@
-# QBitHelper - made by Opaquer
+# QBitHelper - made by [Opaquer](https://github.com/Opaque02)
 
 Hey guys, and welcome to Qbittorrent/discord notifier bot!
 
