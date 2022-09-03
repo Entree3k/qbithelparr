@@ -138,7 +138,7 @@ CompleteStatus = "completed"
 ## ENTER YOUR DETAILS HERE ##
 #############################
 
-botChannel = "BOT CHANNEL" ## ID CHANNEL OF THE CHANNEL FOR THE BOT TO LISTEN TO ##
+botChannel = channel-ID ## ID CHANNEL OF THE CHANNEL FOR THE BOT TO LISTEN TO ##
 tvCategory = "tv-sonarr" ## CATEGORY IN QBIT FOR TV SHOWS ##
 movieCategory = "radarr" ## CATEGORY IN QBIT FOR MOVIES ##
 qbt_client = qbittorrentapi.Client(host='localhost', port=8080, username='admin', password='password') ## QBIT WEB LOGIN DETAILS ##
@@ -201,7 +201,7 @@ print("------------------------------------------------")
 
 print("starting Discord...")
 client = discord.Client()
-prefix = "$"
+prefix = "/"
 bot=commands.Bot(command_prefix=prefix)
 
 ## BOT VERSION ##
@@ -218,7 +218,7 @@ async def on_message(message):
     await bot.process_commands(message)
 
 @bot.command(
-        help = "Use this to see the status of what's currently downloading."+"\n"+"If you want to get fancy, you can search for movies/tv shows specifically by type $status movies or $status tv."+"\n"+"You can also see what's completed by doing $status completed, or $status all to see everything."+"\n"+"Finally, you can combine these (like $status tv completed) to only see completed tv shows."+"\n"+"(tip: you can see everything by typing $status all)",
+        help = "Use this to see the status of what's currently downloading."+"\n"+"If you want to get fancy, you can search for movies/tv shows specifically by type /status movies or /status tv."+"\n"+"You can also see what's completed by doing /status completed, or /status all to see everything."+"\n"+"Finally, you can combine these (like /status tv completed) to only see completed tv shows."+"\n"+"(tip: you can see everything by typing /status all)",
         brief = "Use this to see what's currently downloading"
     )
 
