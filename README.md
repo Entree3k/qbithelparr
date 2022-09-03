@@ -1,6 +1,6 @@
 # QBitHelper - made by Opaquer
 
-Hey guys, and welcome to Plex/discord notifier bot!
+Hey guys, and welcome to Qbittorrent/discord notifier bot!
 
 So, first thing's first: I'm not a programmer at all. There may be bugs, and I haven't actually tried this on anything other than my Windows PC. I'm more than happy for people to work on it and make better versions as needed. Also, I've never done this before, so I don't know if there's a better way to do this. I'm going to walk through the steps of making the bot, installing all the necessary things, and finally the code to run. I know it's a lot, and I'm sorry, but if there's a better way to do it, I'd love to hear it!
 
