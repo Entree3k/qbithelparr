@@ -138,7 +138,7 @@ CompleteStatus = "completed"
 ## ENTER YOUR DETAILS HERE ##
 #############################
 
-botChannel = channel-ID ## ID CHANNEL OF THE CHANNEL FOR THE BOT TO LISTEN TO ##
+botChannel = BOT CHANNEL ## ID CHANNEL OF THE CHANNEL FOR THE BOT TO LISTEN TO ##
 tvCategory = "tv-sonarr" ## CATEGORY IN QBIT FOR TV SHOWS ##
 movieCategory = "radarr" ## CATEGORY IN QBIT FOR MOVIES ##
 qbt_client = qbittorrentapi.Client(host='localhost', port=8080, username='admin', password='password') ## QBIT WEB LOGIN DETAILS ##
