@@ -1,8 +1,11 @@
 import discord
 from discord.ext import commands
 import requests
-
 import qbittorrentapi
+import configparser
+config = configparser.ConfigParser()
+config.sections()
+config.read("config.ini")
 
 def filterBy(TorrentInfo,filterType):
     if TorrentInfo[1]==filterType or filterType=="all":
@@ -138,12 +141,11 @@ CompleteStatus = "completed"
 ## ENTER YOUR DETAILS HERE ##
 #############################
 
-botChannel = BOT CHANNEL ## ID CHANNEL OF THE CHANNEL FOR THE BOT TO LISTEN TO ##
-tvCategory = "tv-sonarr" ## CATEGORY IN QBIT FOR TV SHOWS ##
-movieCategory = "radarr" ## CATEGORY IN QBIT FOR MOVIES ##
-qbt_client = qbittorrentapi.Client(host='localhost', port=8080, username='admin', password='password') ## QBIT WEB LOGIN DETAILS ##
-TOKEN = "BOT SECRET" ## DISCORD BOT SECRET ##
-
+botChannel = int(config['DISCORD']['botChannel']) ## ID CHANNEL OF THE CHANNEL FOR THE BOT TO LISTEN TO ##
+tvCategory = config['SONARR']['tvCategory'] ## CATEGORY IN QBIT FOR TV SHOWS ##
+movieCategory = config['RADARR']['movieCategory'] ## CATEGORY IN QBIT FOR MOVIES ##
+qbt_client = qbittorrentapi.Client(host=config['QBITTORRENT']['host'], port=int(config['QBITTORRENT']['port']), username=config['QBITTORRENT']['username'], password=config['QBITTORRENT']['password']) ## QBIT WEB LOGIN DETAILS ##
+TOKEN = config['DISCORD']['token'] ## DISCORD BOT SECRET ##
 
 # the Client will automatically acquire/maintain a logged in state in line with any request.
 # therefore, this is not necessary; however, you may want to test the provided login credentials.
@@ -200,9 +202,9 @@ def updateAll(category,status="all"):
 print("------------------------------------------------")
 
 print("starting Discord...")
-client = discord.Client()
 prefix = "/"
-bot=commands.Bot(command_prefix=prefix)
+bot_intents = discord.Intents.all()
+bot = commands.Bot(command_prefix=prefix, intents=bot_intents)
 
 ## BOT VERSION ##
 
