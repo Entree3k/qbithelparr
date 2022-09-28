@@ -8,4 +8,6 @@ ADD main.py /
 
 CMD [ "python3", "./main.py" ] 
 
+ENV TZ="Etc/UTC"
+
 VOLUME /config
