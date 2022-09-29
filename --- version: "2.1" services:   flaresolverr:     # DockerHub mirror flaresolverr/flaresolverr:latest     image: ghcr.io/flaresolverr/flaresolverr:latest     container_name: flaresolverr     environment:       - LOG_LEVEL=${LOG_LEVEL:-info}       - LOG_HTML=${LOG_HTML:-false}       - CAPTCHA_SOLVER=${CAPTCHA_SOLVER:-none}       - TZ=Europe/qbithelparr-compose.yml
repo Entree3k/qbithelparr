@@ -1,0 +1,8 @@
+---
+version: "2.1"
+services:
+  flaresolverr:
+    # DockerHub mirror flaresolverr/flaresolverr:latest
+    image: ghcr.io/entree3000/qbithelparr:latest
+    container_name: qbithelparr
+    restart: unless-stopped
