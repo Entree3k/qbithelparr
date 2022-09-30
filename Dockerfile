@@ -1,6 +1,6 @@
 FROM python:3.9-alpine
 
-VOLUME /config
+VOLUME [ "/usr/app/config" ]
 
 ADD requirements.txt /
 ADD config.ini /
