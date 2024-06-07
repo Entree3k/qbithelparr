@@ -1,13 +1,17 @@
-FROM python:3.9-alpine
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-WORKDIR /usr/app
+# Set the working directory in the container
+WORKDIR /usr/src/app
 
-ADD requirements.txt /
-ADD config.ini /
-RUN pip install -r requirements.txt
+# Copy the requirements file into the container at /usr/src/app
+COPY requirements.txt ./
 
-ADD main.py /
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-VOLUME [ "/usr/app/config" ]
+# Copy the rest of the working directory contents into the container at /usr/src/app
+COPY . .
 
-CMD [ "python3", "./main.py" ]
+# Run the application
+CMD ["python", "./qbithelparr.py"]
