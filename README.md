@@ -18,7 +18,7 @@ qbithelparr is a Discord bot that provides torrent status updates from qBittorre
 
 1. Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Entree3k/qbithelparr
     cd qbithelparr
     ```
 
@@ -31,20 +31,20 @@ qbithelparr is a Discord bot that provides torrent status updates from qBittorre
 
     ```ini
     [DISCORD]
-    token = <YOUR_DISCORD_BOT_TOKEN>
-    botChannel = <YOUR_DISCORD_CHANNEL_ID>
+    token = your_discord_bot_token
+    botChannel = your_discord_channel_id
 
     [SONARR]
-    tvCategory = <YOUR_TV_CATEGORY>
+    tvCategory = tv
 
     [RADARR]
-    movieCategory = <YOUR_MOVIE_CATEGORY>
+    movieCategory = movies
 
     [QBITTORRENT]
-    host = <YOUR_QBITTORRENT_HOST>
-    port = <YOUR_QBITTORRENT_PORT>
-    username = <YOUR_QBITTORRENT_USERNAME>
-    password = <YOUR_QBITTORRENT_PASSWORD>
+    host = localhost
+    port = 8080
+    username = your_qbittorrent_username
+    password = your_qbittorrent_password
     ```
 
 ## Usage
