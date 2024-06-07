@@ -1,4 +1,4 @@
-# qbithelparr Bot
+# qbithelparr
 
 qbithelparr is a Discord bot that provides torrent status updates from qBittorrent. It can send notifications to both Discord channels.
 
