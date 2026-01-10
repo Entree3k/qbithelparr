@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  qbithelparr:
+    image: entree3000/qbithelparr:latest
+    container_name: qbithelparr
+    restart: unless-stopped
+    environment:
+      # Discord Configuration
+      - token=your_discord_bot_token
+      - botChannel=your_discord_channel_id
+
+      # qBittorrent Configuration
+      - QBIT_HOST=localhost
+      - QBIT_PORT=8080
+      - QBIT_USER=admin
+      - QBIT_PASS=your_password
+
+      # Category Configuration
+      - TV_CATEGORY=tv
+      - MOVIE_CATEGORY=movies
+
+    volumes:
+      # Mount the app directory to persist config.ini
+      - ./config:/usr/src/app
+      # OR use a named volume:
+      # - qbithelparr-config:/usr/src/app
+
+    # Uncomment if qBittorrent is in a separate container on the same network
+    # networks:
+    #   - media-network
+
+# Uncomment if using named volumes
+# volumes:
+#   qbithelparr-config:
+
+# Uncomment if using a custom network
+# networks:
+#   media-network:
+#     external: true
